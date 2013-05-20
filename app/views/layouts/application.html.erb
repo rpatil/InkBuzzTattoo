@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN" dir="ltr">
+<head>
+  <title>InkBuzzTatoo -- <%=controller.action_name%></title>
+  
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%=javascript_include_tag "jquery-1.4.3.min" %>
+  <%= csrf_meta_tags %>
+
+  <%= javascript_include_tag "jquery.s3slider.js" %>
+  <%= javascript_include_tag "jquery.s3slider.setup.js" %>
+
+
+<!-- 
+<link rel="stylesheet" href="styles/layout.css" type="text/css" />
+<script type="text/javascript" src="scripts/jquery-1.4.3.min.js"></script>
+<script type="text/javascript" src="scripts/jquery.s3slider.js"></script>
+<script type="text/javascript" src="scripts/jquery.s3slider.setup.js"></script> -->
+
+<script type="text/javascript">	
+	$(document).ready(function() {
+		<% if controller.action_name == 'index' %> $('#index_page').addClass('active');  <% end %>
+		<% if controller.action_name == 'about_us' %> $('li#about_us_page').addClass('active');  <% end %>
+		<% if controller.action_name == 'gallery' %> $('#gallery_page').addClass('active');  <% end %>
+		<% if controller.action_name == 'index' %> $('#offers_page').addClass('active');  <% end %>
+		<% if controller.action_name == 'contact_us' %> $('#contact_us_page').addClass('active');  <% end %>
+
+	});
+</script>
+</head>
+
+
+
+
+<body id="top">
+<div class="wrapper col1">
+  <div id="header">
+    <div id="topnav">
+      <ul>
+      	<li id='contact_us' class="last"><a href="/ContactUs">Contact Us</a></li>
+         <li id='offers_page' ><a href="#">Offers</a>
+          <ul>
+            <li><a href="#">Offers 1</a></li>
+            <li><a href="#">Offers 2</a></li>
+            <li><a href="#">Offers 3</a></li>
+          </ul>
+        </li>
+        <li id='gallery_page' ><a href="/Gallery">Gallery</a></li>
+        <li id='about_us_page' ><a href="/AboutUs">About Us</a></li>
+        <li id='index_page' class=""><a href="/Index">Home page</a></li>
+      </ul>
+    </div>
+    <div class="fl_left">
+      <h1><a href="/Index">InkBuzzTattoo</a></h1>
+      <p>Enjoy Tattoo's of your choice</p>
+    </div>
+    <br class="clear" />
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<%= yield %>
+<!-- ####################################################################################################### -->
+<div class="wrapper col5">
+  <div id="footer">
+    <p class="fl_left">Copyright &copy; 2013 - All Rights Reserved - <a href="#">InkBuzzTattoo</a></p>
+    <p class="fl_right">Template by <a href="#" title="">MG</a></p>
+    <br class="clear" />
+  </div>
+</div>
+</body>
+</html>
+
